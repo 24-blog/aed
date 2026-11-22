@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>過去の割合は、未来にどこまで延ばせるか</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#16140f; --card:#1c1912; --fut:#25211a; --ink:#e8e1d2; --sub:#a39b88;
+  --grid:#34302530; --line:#3a352a; --gold:#d9a441; --steel:#8fb0cf;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 16px 28px;background:var(--bg);color:var(--ink);
+  font:15px/1.85 "Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-size:1.25rem;font-weight:600;margin:0 0 6px;letter-spacing:.02em}
+.lead{margin:0 0 18px;color:var(--sub);font-size:.9rem;max-width:44em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 14px 8px}
+.card h2{font-size:1rem;font-weight:600;margin:0}
+.card.d h2{color:var(--steel)} .card.a h2{color:var(--gold)}
+.card p{margin:2px 0 8px;font-size:.84rem;color:var(--sub)}
+svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--line);stroke-width:1}
+.tk{fill:var(--sub);font:13px "DM Mono",monospace}
+.rg{fill:var(--sub);font-size:14px}
+.fut{fill:var(--fut)}
+.bd{stroke:var(--sub);stroke-width:1;stroke-dasharray:3 4}
+.ev{stroke:var(--sub);stroke-width:1;stroke-dasharray:2 4}
+.evt,.lk{fill:var(--ink);font-size:13px;paint-order:stroke;stroke:var(--fut);stroke-width:3px}
+.yl{fill:var(--ink);font-size:13px}
+.ctl{margin:16px 0 4px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-size:.9rem}
+.ctl label{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.ctl input[type=range]{width:min(260px,70vw);accent-color:var(--gold)}
+.ctl output{font:14px "DM Mono",monospace;color:var(--gold);min-width:3em}
+button{font:inherit;font-size:.85rem;padding:4px 14px;color:var(--ink);background:transparent;
+  border:1px solid var(--sub);border-radius:4px;cursor:pointer}
+button:hover{border-color:var(--gold);color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.note{font-size:.8rem;color:var(--sub);margin:10px 0 0;max-width:52em}
+.note p{margin:0 0 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>過去の割合は、未来にどこまで延ばせるか</h1>
+  <p class="lead">左は条件が変わらないサイコロ、右は条件が変わり得るAED救護。どちらも「1,000回(件)の観測」から未来へ延ばしたときの、推定の幅を比べる。</p>
+
+  <div class="grid">
+    <section class="card d">
+      <h2>サイコロ ― 条件が不変</h2>
+      <p>構造・振り方・独立性が固定されているので、過去から延ばした幅は保たれる。</p>
+      <div id="dice"></div>
+    </section>
+    <section class="card a">
+      <h2>AED救護 ― 条件が可変で複雑</h2>
+      <p>社会的認識、法環境、救護の状況などが変わり得るので、延ばすほど幅が開く。方向は上にも下にもある。</p>
+      <div id="aed"></div>
+    </section>
+  </div>
+
+  <div class="ctl">
+    <label for="sl">条件の変化の大きさ(架空)
+      <input id="sl" type="range" min="0" max="1.6" step="0.05" value="0.9">
+      <output id="sv" for="sl"></output>
+    </label>
+    <button id="re" type="button">乱数を振り直す</button>
+  </div>
+
+  <div class="note">
+    <p>実線と帯(左の区切りまで)は、観測された割合と、その推定の不確かさ(95%区間)。区切りより右の帯は、過去の数字をそのまま延ばしたときの幅を示す概念図で、予測値ではない。</p>
+    <p>点線は「あり得る推移」の例。条件が変わるとき、その方向は一つに決まらない。スライダーを0にすると、AED救護の帯もサイコロと同じ幅のままになる。</p>
+    <p>数値は説明用の架空例(1,000回中の出目、1,000件中10件)であり、実データではない。スライダーの値にも根拠はない。</p>
+  </div>
+</div>
+
+<script>
+const W=480,H=340,L=44,R=10,T=22,B=40,PW=W-L-R,PH=H-T-B,N=1000,XM=2000;
+const $=id=>document.getElementById(id);
+const X=n=>L+n/XM*PW, f=v=>v.toFixed(1);
+
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function wilson(k,n){const z=1.96,p=k/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return[c-h,c+h]}
+
+function make(kind,rand){
+  const h=new Uint8Array(N);
+  if(kind==='dice'){for(let i=0;i<N;i++)h[i]=rand()<1/6?1:0}
+  else{const ix=[...Array(N).keys()];
+    for(let i=0;i<10;i++){const j=i+(rand()*(N-i)|0);[ix[i],ix[j]]=[ix[j],ix[i]];h[ix[i]]=1}}
+  const out=[];let k=0;
+  for(let n=1;n<=N;n++){k+=h[n-1];if(n%10===0){const[lo,hi]=wilson(k,n);out.push({n,p:k/n,lo,hi})}}
+  return out;
+}
+
+function panel(o,d,s){
+  const Y=p=>T+PH-p/o.ymax*PH;
+  const last=d[d.length-1],c=last.p,a=last.hi/c,b=c/last.lo;
+  const g=u=>Math.sqrt(1+(s*u)**2);
+  const us=Array.from({length:21},(_,i)=>i/20), fx=u=>N+u*(XM-N);
+  const pt=(n,p)=>f(X(n))+','+f(Y(p));
+  const poly=(up,lo)=>up.concat(lo.reverse()).join(' ');
+  const past=poly(d.map(q=>pt(q.n,q.hi)),d.map(q=>pt(q.n,q.lo)));
+  const fut=poly(us.map(u=>pt(fx(u),c*a*g(u))),us.map(u=>pt(fx(u),c/(b*g(u)))));
+  const line=d.map(q=>pt(q.n,q.p)).join(' ');
+  const paths=o.fan?[.9,.5,-.5,-.9].map(k=>`<polyline points="${us.map(u=>pt(fx(u),c*Math.pow(g(u),k))).join(' ')}" fill="none" stroke="${o.c}" stroke-opacity=".6" stroke-width="1.3" stroke-dasharray="4 4"/>`).join(''):'';
+  const grid=o.ticks.map(([v,t])=>`<line class="gl" x1="${L}" x2="${W-R}" y1="${f(Y(v))}" y2="${f(Y(v))}"/><text class="tk" x="${L-6}" y="${f(Y(v)+4)}" text-anchor="end">${t}</text>`).join('');
+  const ev=(o.ev||[]).map(([n,t])=>`<line class="ev" x1="${f(X(n))}" x2="${f(X(n))}" y1="${T}" y2="${T+PH}"/><text class="evt" transform="translate(${f(X(n)+5)},${T+6}) rotate(90)">${t}</text>`).join('');
+  const lock=o.lock?`<text class="lk" x="${f(X(N)+8)}" y="${T+18}">${o.lock}</text>`:'';
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.label}">
+<defs><clipPath id="cp-${o.id}"><rect x="${L}" y="${T}" width="${PW}" height="${PH}"/></clipPath></defs>
+<rect class="fut" x="${f(X(N))}" y="${T}" width="${f(W-R-X(N))}" height="${PH}"/>
+${grid}
+<g clip-path="url(#cp-${o.id})">
+<polygon points="${past}" fill="${o.c}" fill-opacity=".25"/>
+<polygon points="${fut}" fill="${o.c}" fill-opacity=".25"/>
+<polyline points="${line}" fill="none" stroke="${o.c}" stroke-width="2"/>
+<line x1="${f(X(N))}" x2="${f(X(XM))}" y1="${f(Y(c))}" y2="${f(Y(c))}" stroke="${o.c}" stroke-width="2" stroke-dasharray="6 4"/>
+${paths}
+</g>
+<line class="bd" x1="${f(X(N))}" x2="${f(X(N))}" y1="${T}" y2="${T+PH}"/>
+${ev}${lock}
+<text class="yl" x="${L}" y="14">${o.y}</text>
+<text class="rg" x="${f(X(500))}" y="${H-12}" text-anchor="middle">過去の観測(1,000${o.u})</text>
+<text class="rg" x="${f(X(1500))}" y="${H-12}" text-anchor="middle">未来(外挿)</text>
+</svg>`;
+}
+
+const cfgD={id:'d',c:'#8fb0cf',ymax:.5,y:'「1の目」が出た割合',u:'回',fan:false,
+  ticks:[[0,'0'],[1/6,'1/6'],[1/3,'1/3'],[.5,'1/2']],lock:'構造・条件・独立性は固定',
+  label:'サイコロの出目の割合。過去1,000回の観測から未来へ延ばしても、推定の幅はほぼ変わらない。'};
+const cfgA={id:'a',c:'#d9a441',ymax:.03,y:'訴えられた割合(架空の例)',u:'件',fan:true,
+  ticks:[[0,'0%'],[.01,'1%'],[.02,'2%'],[.03,'3%']],ev:[[1350,'認識の変化?'],[1700,'法環境の変化?']],
+  label:'AED救護で訴えられた割合の架空の例。過去1,000件の観測から未来へ延ばすと、推定の幅が上にも下にも開く。'};
+
+let seed=11,data;
+function build(){const r=mulberry32(seed);data=[make('dice',r),make('aed',r)]}
+function render(){
+  const s=+$('sl').value;$('sv').textContent=s.toFixed(2);
+  $('dice').innerHTML=panel(cfgD,data[0],0);
+  $('aed').innerHTML=panel(cfgA,data[1],s);
+}
+$('sl').addEventListener('input',render);
+$('re').addEventListener('click',()=>{seed++;build();render()});
+build();render();
+</script>
+</body>
+</html>
