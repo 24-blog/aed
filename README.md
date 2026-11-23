@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/license-MIT-greeeen)](LICENSE)
 
 
-#### 救護の現場と事後評価の非対称性図
+#### 救護の現場と事後評価の非対称図
 https://24-blog.github.io/aed/asymmetry
 
 
