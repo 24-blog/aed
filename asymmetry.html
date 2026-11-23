@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>救護の現場と事後評価の非対称性</title>
+<style>
+  :root {
+    --amber: #a85f00; --amber-bg: #fff4e0; --amber-hd: #fde3b0; --amber-tx: #7a4500;
+    --blue: #2f6fb5;  --blue-bg: #eaf2fc;  --blue-hd: #cfe2f6;  --blue-tx: #1f4f85;
+    --red: #c0392b;   --red-bg: #fdeceb;   --red-tx: #9b2c20;
+  }
+  body { margin: 0; padding: 16px; background: #fff; color: #222; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; line-height: 1.7; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .wrap svg { display: block; width: 100%; height: auto; }
+  .tbl { overflow-x: auto; margin-top: 20px; }
+  .tbl table { border-collapse: collapse; white-space: nowrap; }
+  .tbl caption { caption-side: top; text-align: left; font-weight: bold; margin-bottom: 6px; }
+  .tbl th, .tbl td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  .tbl thead th:nth-child(1) { background: #eee; }
+  .tbl thead th:nth-child(2) { background: var(--amber-hd); color: var(--amber-tx); border-top: 3px solid var(--amber); }
+  .tbl thead th:nth-child(3) { background: var(--blue-hd); color: var(--blue-tx); border-top: 3px solid var(--blue); }
+  .tbl tbody td:nth-child(1) { background: #f5f5f5; font-weight: bold; }
+  .tbl tbody td:nth-child(2) { background: var(--amber-bg); }
+  .tbl tbody td:nth-child(3) { background: var(--blue-bg); }
+  .tbl tbody tr.risk td:nth-child(1) { box-shadow: inset 3px 0 0 var(--red); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif">
+  <title id="t">救護の現場と事後評価の非対称性</title>
+  <desc id="d">行為時点では情報が少なく時間もなく結果も不明だが、事後評価では情報が揃い時間も十分にあり結果も既知である。判断の前提が異なるのに、同じ行為が評価される。</desc>
+  <defs>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#777"/></marker>
+    <marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6fb5"/></marker>
+  </defs>
+
+  <!-- 左:行為時点 -->
+  <rect x="16" y="20" width="248" height="250" fill="#fff4e0" stroke="#a85f00" stroke-width="2"/>
+  <rect x="16" y="20" width="248" height="64" fill="#a85f00"/>
+  <text x="140" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#fff">行為時点</text>
+  <text x="140" y="74" text-anchor="middle" font-size="14" fill="#fff">緊急時の現場・非専門家</text>
+
+  <text x="36" y="122" font-size="14" fill="#7a4500">情報</text>
+  <text x="244" y="122" text-anchor="end" font-size="20" font-weight="bold" fill="#7a4500">限られる</text>
+  <line x1="36" y1="136" x2="244" y2="136" stroke="#e8c88a"/>
+  <text x="36" y="168" font-size="14" fill="#7a4500">時間</text>
+  <text x="244" y="168" text-anchor="end" font-size="20" font-weight="bold" fill="#7a4500">秒単位</text>
+  <line x1="36" y1="182" x2="244" y2="182" stroke="#e8c88a"/>
+  <text x="36" y="214" font-size="14" fill="#7a4500">結果</text>
+  <text x="244" y="214" text-anchor="end" font-size="20" font-weight="bold" fill="#7a4500">未確定</text>
+  <text x="140" y="252" text-anchor="middle" font-size="14" fill="#7a4500">目的:生命・安全の確保</text>
+
+  <!-- 右:事後評価 -->
+  <rect x="336" y="20" width="248" height="250" fill="#eaf2fc" stroke="#2f6fb5" stroke-width="2"/>
+  <rect x="336" y="20" width="248" height="64" fill="#2f6fb5"/>
+  <text x="460" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#fff">事後評価</text>
+  <text x="460" y="74" text-anchor="middle" font-size="14" fill="#fff">専門家・行政</text>
+
+  <text x="356" y="122" font-size="14" fill="#1f4f85">情報</text>
+  <text x="564" y="122" text-anchor="end" font-size="20" font-weight="bold" fill="#1f4f85">揃っている</text>
+  <line x1="356" y1="136" x2="564" y2="136" stroke="#a9c7e8"/>
+  <text x="356" y="168" font-size="14" fill="#1f4f85">時間</text>
+  <text x="564" y="168" text-anchor="end" font-size="20" font-weight="bold" fill="#1f4f85">十分ある</text>
+  <line x1="356" y1="182" x2="564" y2="182" stroke="#a9c7e8"/>
+  <text x="356" y="214" font-size="14" fill="#1f4f85">結果</text>
+  <text x="564" y="214" text-anchor="end" font-size="20" font-weight="bold" fill="#1f4f85">既知</text>
+  <text x="460" y="252" text-anchor="middle" font-size="14" fill="#1f4f85">目的:適否の判定・責任の確定</text>
+
+  <!-- 時間の経過 -->
+  <line x1="272" y1="152" x2="328" y2="152" stroke="#777" stroke-width="2" marker-end="url(#ahg)"/>
+  <text x="300" y="138" text-anchor="middle" font-size="13" fill="#555">時間</text>
+  <text x="300" y="176" text-anchor="middle" font-size="13" fill="#555">経過</text>
+
+  <!-- 評価の矢印(事後→行為) -->
+  <path d="M460 276 V300 H140 V280" fill="none" stroke="#2f6fb5" stroke-width="2.5" marker-end="url(#ahb)"/>
+  <text x="300" y="324" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">前提が違うのに、同じ行為を評価する</text>
+
+  <!-- 帰結 -->
+  <rect x="16" y="340" width="568" height="46" fill="#fdeceb" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="300" y="368" text-anchor="middle" font-size="15" font-weight="bold" fill="#9b2c20">帰結:評価が厳しすぎると、救護をためらわせる(萎縮効果)</text>
+</svg>
+
+<div class="tbl">
+<table>
+<caption>緊急時対応と事後評価の比較</caption>
+<thead>
+<tr>
+<th>観点</th>
+<th>緊急時の現場で求められる判断</th>
+<th>事後の評価</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>判断する者</td><td>非専門家による、医学・法的・対人の即時判断</td><td>専門家・行政による、精緻な審査</td></tr>
+<tr><td>判断の基準時点</td><td>行為時点(結果は未確定)</td><td>結果が判明した後(後知恵バイアスの危険)</td></tr>
+<tr><td>利用できる情報・時間</td><td>限られた情報(意識・呼吸の有無すら不確実)と、秒単位の時間</td><td>事実関係・記録・証言が揃い、十分な検討時間がある</td></tr>
+<tr><td>求められる水準</td><td>その場で可能な範囲の最善(講習等で得た知識が上限)</td><td>専門家の水準や理想的な手順を基準にしがち</td></tr>
+<tr><td>救護の目的</td><td>生命・安全の確保を最優先</td><td>必要性、最小性、代替手段、適切性を検証</td></tr>
+<tr><td>評価の目的</td><td>救命(結果の回避)</td><td>適否の判定と責任の所在の確定</td></tr>
+<tr class="risk"><td>失敗のリスク</td><td>救命の遅れ、不適切な接触</td><td>処分、セクハラ認定、社会的非難、訴訟等</td></tr>
+<tr><td>法的な枠組み</td><td>緊急避難(刑法37条)、緊急事務管理の免責(民法698条:悪意・重過失がなければ賠償責任を負わない)等が問題となりうる</td><td>免責が認められるかは、事後に個別事情から判断される</td></tr>
+<tr class="risk"><td>社会的な帰結</td><td>迷えば救護が遅れる</td><td>厳格すぎる評価は、救護をためらわせる萎縮効果を生む</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</body>
+</html>
