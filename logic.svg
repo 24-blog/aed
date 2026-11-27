@@ -96,7 +96,7 @@
   <rect x="58" y="384" width="34" height="30" rx="5" class="badge"/>
   <text x="75" y="404" text-anchor="middle" class="sans id ink">P4</text>
   <text x="108" y="396" class="math f ink">¬A → (Dw ∧ Dm)</text>
-  <text x="108" y="416" class="sans g mute">使わなければ、双方の尊厳が守られる</text>
+  <text x="108" y="416" class="sans g mute">使わなければ、双方の尊厳が確実に守られる</text>
 
   <!-- P5 -->
   <rect x="40" y="436" width="680" height="54" rx="6" class="card"/>
