@@ -70,8 +70,8 @@
   <rect x="58" y="192" width="34" height="30" rx="5" class="badge"/>
   <text x="75" y="212" text-anchor="middle" class="sans id ink">P1</text>
   <text x="108" y="204" class="math f ink">尊厳 ≻ 救護</text>
-  <text x="108" y="224" class="sans g mute">社会が採る規範:女性の身体に触れる行為自体に加害性がある</text>
-  <text x="706" y="204" text-anchor="end" class="sans tag amber">現代日本を規定するヘゲモニー</text>
+  <text x="108" y="224" class="sans g mute">女性の身体に触れる行為自体不快であり加害性がある</text>
+  <text x="706" y="204" text-anchor="end" class="sans tag amber">現代日本が採用する社会規範</text>
 
   <!-- P2 -->
   <rect x="40" y="244" width="680" height="54" rx="6" class="weak"/>
