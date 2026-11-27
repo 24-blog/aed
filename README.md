@@ -4,7 +4,7 @@
 #### 救護の現場と事後評価の非対称図
 https://24-blog.github.io/aed/asymmetry
 
-#### 論理的帰結
+#### 論理構造図
 ![](logic.svg) 
 
 ⚠️COPYRIGHT<br>
