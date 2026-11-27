@@ -7,6 +7,5 @@ https://24-blog.github.io/aed/asymmetry
 #### 論理的帰結
 ![](logic.svg) 
 
-
 ⚠️COPYRIGHT<br>
 All non-code text authored by the repository owner is licensed under CC BY-NC-ND 4.0.
