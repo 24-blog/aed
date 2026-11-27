@@ -70,8 +70,8 @@
   <rect x="58" y="192" width="34" height="30" rx="5" class="badge"/>
   <text x="75" y="212" text-anchor="middle" class="sans id ink">P1</text>
   <text x="108" y="204" class="math f ink">尊厳 ≻ 生命</text>
-  <text x="108" y="224" class="sans g mute">社会が採る規範:尊厳は生命に優先する</text>
-  <text x="706" y="204" text-anchor="end" class="sans tag amber">反論の標的</text>
+  <text x="108" y="224" class="sans g mute">社会が採る規範:女性の尊厳保護を救護より優先</text>
+  <text x="706" y="204" text-anchor="end" class="sans tag amber">現代の時代精神</text>
 
   <!-- P2 -->
   <rect x="40" y="244" width="680" height="54" rx="6" class="weak"/>
@@ -79,8 +79,8 @@
   <rect x="58" y="256" width="34" height="30" rx="5" class="badge"/>
   <text x="75" y="276" text-anchor="middle" class="sans id ink">P2</text>
   <text x="108" y="268" class="math f ink">Dw ≈ Dm</text>
-  <text x="108" y="288" class="sans g mute">女性の尊厳と男性の尊厳は同価値</text>
-  <text x="706" y="268" text-anchor="end" class="sans tag amber">反論の標的</text>
+  <text x="108" y="288" class="sans g mute">尊厳の重さに性差はなく同価値</text>
+  <text x="706" y="268" text-anchor="end" class="sans tag amber">否定は性差別</text>
 
   <!-- P3 -->
   <rect x="40" y="308" width="680" height="54" rx="6" class="weak"/>
@@ -89,7 +89,7 @@
   <text x="75" y="340" text-anchor="middle" class="sans id ink">P3</text>
   <text x="108" y="332" class="math f ink">A → ¬(Dw ∧ Dm)</text>
   <text x="108" y="352" class="sans g mute">AEDを使えば、どちらかの尊厳が侵害される</text>
-  <text x="706" y="332" text-anchor="end" class="sans tag amber">反論の標的</text>
+  <text x="706" y="332" text-anchor="end" class="sans tag amber">保護の失敗により帰結</text>
 
   <!-- P4 -->
   <rect x="40" y="372" width="680" height="54" rx="6" class="card"/>
@@ -112,11 +112,11 @@
 
   <rect x="40" y="564" width="680" height="54" rx="6" class="step"/>
   <text x="58" y="588" class="sans fs ink">① <tspan class="math f">P1 ∧ P2 ⊢ 最上位の価値 = Dw ∧ Dm</tspan></text>
-  <text x="58" y="608" class="sans g mute">尊厳が生命に優先し、双方の尊厳が等価なので、両者を同時に守ることが最上位になる</text>
+  <text x="58" y="608" class="sans g mute">尊厳が救護に優先し、双方の尊厳が等価なので、両者を同時に守ることが最上位になる</text>
 
   <rect x="40" y="628" width="680" height="54" rx="6" class="step"/>
   <text x="58" y="652" class="sans fs ink">② P3:A は <tspan class="math f">Dw ∧ Dm</tspan> を満たさない　／　P4:¬A は満たす</text>
-  <text x="58" y="672" class="sans g mute">生命は劣後するため、¬A によって失われるものは比較に入らない</text>
+  <text x="58" y="672" class="sans g mute">救護は劣後するため、¬A によって失われるものは比較に入らない</text>
 
   <rect x="40" y="692" width="680" height="54" rx="6" class="step"/>
   <text x="58" y="716" class="sans fs ink">③ <tspan class="math f">P5 ⊢ O(¬A)</tspan></text>
