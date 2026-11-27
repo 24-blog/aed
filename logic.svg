@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1130" width="760" height="1130" role="img" aria-labelledby="t d" xmlns:c2pa="http://c2pa.org/manifest">
+  <title id="t">「尊厳は生命に優先する」規範の帰結(帰謬法)</title>
+  <desc id="d">前提P1〜P5から、AEDを使わないことが義務になるという帰結O(¬A)を導き、その受け入れがたさから出発点P1を棄却する論理構造の図。</desc>
+
+  <style>
+    .bg    { fill: #ffffff; }
+    .ink   { fill: #1f2328; }
+    .mute  { fill: #59636e; }
+    .amber { fill: #9a6700; }
+    .red   { fill: #b42318; }
+    .badge { fill: #eaeef2; }
+    .card  { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.2; }
+    .weak  { fill: #ffffff; stroke: #bf8700; stroke-width: 1.2; }
+    .stripe{ fill: #bf8700; }
+    .step  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.2; }
+    .concl { fill: #fff1f0; stroke: #b42318; stroke-width: 1.8; }
+    .reduc { fill: #ffffff; stroke: #1f2328; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .arrow { stroke: #59636e; stroke-width: 1.8; fill: none; }
+    .arrowhead { fill: #59636e; }
+    .sans  { font-family: "Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif; }
+    .math  { font-family: "Cambria Math","STIX Two Math","Times New Roman","DejaVu Serif","Noto Serif JP",serif; }
+    .h1 { font-size: 22px; font-weight: 700; }
+    .h2 { font-size: 14px; font-weight: 700; }
+    .f  { font-size: 18px; }
+    .fs { font-size: 15px; }
+    .g  { font-size: 12.5px; }
+    .tag{ font-size: 11px; font-weight: 700; }
+    .id { font-size: 14px; font-weight: 700; }
+
+    @media (prefers-color-scheme: dark) {
+      .bg    { fill: #0d1117; }
+      .ink   { fill: #e6edf3; }
+      .mute  { fill: #9198a1; }
+      .amber { fill: #d4a72c; }
+      .red   { fill: #ff7b72; }
+      .badge { fill: #21262d; }
+      .card  { fill: #0d1117; stroke: #30363d; }
+      .weak  { fill: #0d1117; stroke: #d4a72c; }
+      .stripe{ fill: #d4a72c; }
+      .step  { fill: #161b22; stroke: #30363d; }
+      .concl { fill: #2d1517; stroke: #ff7b72; }
+      .reduc { fill: #0d1117; stroke: #e6edf3; }
+      .arrow { stroke: #9198a1; }
+      .arrowhead { fill: #9198a1; }
+    }
+  </style>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" class="arrowhead"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="760" height="1130"/>
+
+  <!-- タイトル -->
+  <text x="40" y="50" class="sans h1 ink">「尊厳は生命に優先する」規範の帰結</text>
+  <text x="40" y="76" class="sans g mute">帰謬法による論理構造:前提 → 導出 → 結論 → 前提の棄却</text>
+
+  <!-- 記号 -->
+  <text x="40" y="108" class="sans g mute">A:AEDを使う(¬A:使わない)　Dw:女性の尊厳が守られる　Dm:男性の尊厳が守られる</text>
+  <text x="40" y="128" class="sans g mute">X ≻ Y:XはYに優先する　X ≈ Y:XとYは同価値　O(…):〜すべきである</text>
+
+  <!-- 前提 -->
+  <text x="40" y="168" class="sans h2 ink">前提</text>
+
+  <!-- P1 -->
+  <rect x="40" y="180" width="680" height="54" rx="6" class="weak"/>
+  <rect x="40" y="180" width="6" height="54" rx="3" class="stripe"/>
+  <rect x="58" y="192" width="34" height="30" rx="5" class="badge"/>
+  <text x="75" y="212" text-anchor="middle" class="sans id ink">P1</text>
+  <text x="108" y="204" class="math f ink">尊厳 ≻ 生命</text>
+  <text x="108" y="224" class="sans g mute">社会が採る規範:尊厳は生命に優先する</text>
+  <text x="706" y="204" text-anchor="end" class="sans tag amber">反論の標的</text>
+
+  <!-- P2 -->
+  <rect x="40" y="244" width="680" height="54" rx="6" class="weak"/>
+  <rect x="40" y="244" width="6" height="54" rx="3" class="stripe"/>
+  <rect x="58" y="256" width="34" height="30" rx="5" class="badge"/>
+  <text x="75" y="276" text-anchor="middle" class="sans id ink">P2</text>
+  <text x="108" y="268" class="math f ink">Dw ≈ Dm</text>
+  <text x="108" y="288" class="sans g mute">女性の尊厳と男性の尊厳は同価値</text>
+  <text x="706" y="268" text-anchor="end" class="sans tag amber">反論の標的</text>
+
+  <!-- P3 -->
+  <rect x="40" y="308" width="680" height="54" rx="6" class="weak"/>
+  <rect x="40" y="308" width="6" height="54" rx="3" class="stripe"/>
+  <rect x="58" y="320" width="34" height="30" rx="5" class="badge"/>
+  <text x="75" y="340" text-anchor="middle" class="sans id ink">P3</text>
+  <text x="108" y="332" class="math f ink">A → ¬(Dw ∧ Dm)</text>
+  <text x="108" y="352" class="sans g mute">AEDを使えば、どちらかの尊厳が侵害される</text>
+  <text x="706" y="332" text-anchor="end" class="sans tag amber">反論の標的</text>
+
+  <!-- P4 -->
+  <rect x="40" y="372" width="680" height="54" rx="6" class="card"/>
+  <rect x="58" y="384" width="34" height="30" rx="5" class="badge"/>
+  <text x="75" y="404" text-anchor="middle" class="sans id ink">P4</text>
+  <text x="108" y="396" class="math f ink">¬A → (Dw ∧ Dm)</text>
+  <text x="108" y="416" class="sans g mute">使わなければ、双方の尊厳が守られる</text>
+
+  <!-- P5 -->
+  <rect x="40" y="436" width="680" height="54" rx="6" class="card"/>
+  <rect x="58" y="448" width="34" height="30" rx="5" class="badge"/>
+  <text x="75" y="468" text-anchor="middle" class="sans id ink">P5</text>
+  <text x="108" y="460" class="sans fs ink">最上位の価値を満たす行為 a があるなら <tspan class="math f">O(a)</tspan></text>
+  <text x="108" y="480" class="sans g mute">最上位の価値を満たせる行為があるなら、それを選ぶべき</text>
+
+  <path d="M380,494 L380,526" class="arrow" marker-end="url(#ah)"/>
+
+  <!-- 導出 -->
+  <text x="40" y="552" class="sans h2 ink">導出</text>
+
+  <rect x="40" y="564" width="680" height="54" rx="6" class="step"/>
+  <text x="58" y="588" class="sans fs ink">① <tspan class="math f">P1 ∧ P2 ⊢ 最上位の価値 = Dw ∧ Dm</tspan></text>
+  <text x="58" y="608" class="sans g mute">尊厳が生命に優先し、双方の尊厳が等価なので、両者を同時に守ることが最上位になる</text>
+
+  <rect x="40" y="628" width="680" height="54" rx="6" class="step"/>
+  <text x="58" y="652" class="sans fs ink">② P3:A は <tspan class="math f">Dw ∧ Dm</tspan> を満たさない　／　P4:¬A は満たす</text>
+  <text x="58" y="672" class="sans g mute">生命は劣後するため、¬A によって失われるものは比較に入らない</text>
+
+  <rect x="40" y="692" width="680" height="54" rx="6" class="step"/>
+  <text x="58" y="716" class="sans fs ink">③ <tspan class="math f">P5 ⊢ O(¬A)</tspan></text>
+  <text x="58" y="736" class="sans g mute">最上位の価値を満たせる行為は ¬A だけなので、¬A が義務になる</text>
+
+  <path d="M380,746 L380,780" class="arrow" marker-end="url(#ah)"/>
+
+  <!-- 結論 -->
+  <rect x="40" y="790" width="680" height="76" rx="8" class="concl"/>
+  <text x="380" y="822" text-anchor="middle" class="math f red" style="font-size:22px; font-weight:700;">∴ O(¬A)</text>
+  <text x="380" y="848" text-anchor="middle" class="sans fs ink">侵害の危険がある場面では、AEDを使わないことが義務になる</text>
+
+  <path d="M380,866 L380,896" class="arrow" marker-end="url(#ah)"/>
+
+  <!-- 帰謬法 -->
+  <rect x="40" y="906" width="680" height="76" rx="8" class="reduc"/>
+  <text x="58" y="932" class="sans h2 ink">帰謬法</text>
+  <text x="140" y="932" class="math fs ink">(P1 ∧ P2 ∧ P3 ∧ P4 ∧ P5) → O(¬A)　かつ　¬O(¬A)　∴　¬(P1 ∧ … ∧ P5)</text>
+  <text x="58" y="962" class="sans g mute">結論が受け入れがたいなら前提のどれかが誤り。本稿が棄却するのは出発点 P1「尊厳は生命に優先する」。</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo4MzIwODI4YS02ZTY1LTQ5OTMtYTRhZS1lZDliMjk0ZjYzOGMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaHdGSy6uRRqkkuKw/LmuBXoAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxOWZkMjI5Ni1jNzdhLTQyOWQtOTE3OC03ODBhMDI5ZDQ4YzBscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo1iDlzeDeihqIjqLN5QduLQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg9jfaQpLmmHAr9w9w1QERMIOePspoT0Al8+yX+X4CZUekZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaDRRWUSzksdVBe0cXUIjfecAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIBUnWzv/BCVJBZVlFZiI+I245FDHne7QK1kGJi9bmepfZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSIPZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjgzMjA4MjhhLTZlNjUtNDk5My1hNGFlLWVkOWIyOTRmNjM4Yy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjBmMGM0YzBhLTZiYzMtNDI4Ny04NzAyLWM5MDIwZjRjY2E2MHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD2N9pCkuaYcCv3D3DVAREwg54+ymhPQCXz7Jf5fgJlR6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggDXzupoNS0LBQfWWpcxfTsyWWQAimnrfoTMhxLioaOI2iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggxP/xrjzZpEirwuxZAuf+fLNsXQb4JathOd63dGM9HqF0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQImTcebniJiBO5O2MeBp9Igmyb9JH5NtEg2fbPGrpukpGlJh8QU/7kKn7cTmLmdFMYsWG56IB0uGckXhvjwYYZk=</c2pa:manifest></metadata></svg>
