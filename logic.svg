@@ -88,8 +88,8 @@
   <rect x="58" y="320" width="34" height="30" rx="5" class="badge"/>
   <text x="75" y="340" text-anchor="middle" class="sans id ink">P3</text>
   <text x="108" y="332" class="math f ink">A → ¬(Dw ∧ Dm)</text>
-  <text x="108" y="352" class="sans g mute">AED使用は女性への身体接触を伴うため双方の尊厳が侵害される</text>
-  <text x="706" y="332" text-anchor="end" class="sans tag amber">保護の失敗による論理的帰結</text>
+  <text x="108" y="352" class="sans g mute">AED使用は身体接触や脱衣を伴うため双方の尊厳が侵害される</text>
+  <text x="706" y="332" text-anchor="end" class="sans tag amber">尊厳の保護失敗による論理的帰結</text>
 
   <!-- P4 -->
   <rect x="40" y="372" width="680" height="54" rx="6" class="card"/>
